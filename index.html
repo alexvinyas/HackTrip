@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<title>HackTrip | HackUPC Fall 2016</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		
+		<meta http-equiv="refresh" content="60" >		<meta charset="UTF-8" >
+		<meta name="keywords" content="HackUPC, MLH, Skyscanners, travel, trip" >
+		<meta name="author"   content="Aaron Jimenez, Miguel Moreno, Alex Viñas">
+	</head>
+
+	<body > 
+		<div >
+			<h1>
+				HackTrip <!-- CAMBIAR POR LOGO C00L --> | <a href="conventions.html"; style="color:cyan;"> Conventions</a> | <a href="hacklist.html"; style="color:cyan;"> List of Hackathons </a>
+				</h1>
+			<hr>
+			<img src="Images/SkyScanner.png" style="width:200px; " background-color="black"> 
+			<h3>
+				Need to go to an MLH-sanctioned Hackathon? Need a plane that fits it? Just tell us where, and we'll bring you the most optimal trips to hack (and return) on time!
+			</h3><!-- HEADER -->
+		</div>
+		<div>
+			<form id="data">
+			<p>
+				Where are you from? <!--input type="text" class="buttonstr" name="fromname" value="" autocomplete="on"><br-->
+				<select name="fromname" >
+				  <option value=""></option>
+				  <option value="BCN">Barcelona</option>
+				  <option value="LON">London</option>
+				  <option value="TXS">Austin, TX</option>
+				</select>
+				<br>
+
+				Where do you want to go? 
+				<select name="toname">
+				  <option value=""></option>
+				  <option value="BCN">HackUPC</option>
+				  <option value="AUS">HackTX</option>
+				  <option value="BHX">BrumHack</option>
+				  <option value="BHX2">AstonHack</option>
+				  <option value="LHR">Oxford Hack</option>
+				  <option value="HEL">Junction</option>
+				  <option value="Local">Local Hack Day</option>
+  				  <option value="OTP">HackSociety</option>	
+				</select>
+				<br>
+				Do you want an extra margin of time to depart (in hours)? 
+				<input type="number" class="buttonum" name="hourname" value="0" min="0" max="10"><br>
+				
+				Do you want an extra margin of time to arrive (in hours)? 
+				<input type="number" class="buttonum" name="hourname2" value="0" min="0" max="10"><br>
+				
+				<!--<input type="submit" value="Find" >-->
+				
+				<button onclick="showAlert()">Find </button>
+			</p>
+			</form> 
+			<script>
+				function showAlert() {
+					if (document.forms["data"]["fromname"].value == "" || document.forms["data"]["toname"].value == "") {
+						alert("Please complete the text fields");
+					}
+					// Dat hardcode / top kek
+					else if (document.forms["data"]["fromname"].value == document.forms["data"]["toname"].value && document.forms["data"]["toname"].value == "") {
+						alert("You don't need to take a plane for this hackathon! ");
+					}
+					else if (document.forms["data"]["fromname"].value == "BCN") { //BARCELONA
+						if (document.forms["data"]["toname"].value == "BCN") { //HackUPC
+						    window.open("Result0.html");
+						}
+						if (document.forms["data"]["toname"].value == "OTP") { //HackConnect
+						    window.open("Trip11.html");
+						}
+						if (document.forms["data"]["toname"].value == "HEL") { //Junction
+						    window.open("Trip12.html");
+						}
+						if (document.forms["data"]["toname"].value == "AUS") { //HackTX
+						    window.open("Trip13.html");
+						}
+						if (document.forms["data"]["toname"].value == "LHR") { //Ox
+						    window.open("Trip14.html");
+						}
+						if (document.forms["data"]["toname"].value == "BHX") { //Brum
+						    window.open("Trip16.html");
+						}
+						if (document.forms["data"]["toname"].value == "BHX2") { //Aston
+						    window.open("Trip17.html");
+						}
+						if (document.forms["data"]["toname"].value == "Local") { //Local Hack Day
+						    window.open("LocalHackDay.html");
+						}
+				    }
+				    else if (document.forms["data"]["fromname"].value == "LON") { //LONDON
+						if (document.forms["data"]["toname"].value == "BCN") { //HackUPC
+						    window.open("Complete.html");
+						}
+						if (document.forms["data"]["toname"].value == "OTP") { //HackConnect
+						    window.open("Trip21.html");
+						}
+						if (document.forms["data"]["toname"].value == "HEL") { //Junction
+						    window.open("Trip22.html");
+						}
+						if (document.forms["data"]["toname"].value == "AUS") { //HackNY
+						    window.open("Trip23.html");
+						}
+						if (document.forms["data"]["toname"].value == "LHR") { //Ox
+						    window.open("Result0.html");
+						}
+						if (document.forms["data"]["toname"].value == "BHX") { //Brum
+						    window.open("Result0.html");
+						}
+						if (document.forms["data"]["toname"].value == "BHX2") { //Aston
+						    window.open("Result0.html");
+						}
+						if (document.forms["data"]["toname"].value == "Local") { //Local Hack Day
+						    window.open("LocalHackDay.html");
+						}
+				    }
+				    else if (document.forms["data"]["fromname"].value == "TXS") { //AUSTIN, TX
+						if (document.forms["data"]["toname"].value == "BCN") { //HackUPC
+						    window.open("Complete.html");
+						}
+						if (document.forms["data"]["toname"].value == "OTP") { //HackConnect
+						    window.open("Trip31.html");
+						}
+						if (document.forms["data"]["toname"].value == "HEL") { //Junction
+						    window.open("Trip32.html");
+						}
+						if (document.forms["data"]["toname"].value == "AUS") { //HackTX
+						    window.open("Result0.html");
+						}
+						if (document.forms["data"]["toname"].value == "LHR") { //Ox
+						    window.open("Trip34.html");
+						}
+						if (document.forms["data"]["toname"].value == "BHX") { //Brum
+						    window.open("Trip36.html");
+						}
+						if (document.forms["data"]["toname"].value == "BHX2") { //Aston
+						    window.open("Trip37.html");
+						}
+						if (document.forms["data"]["toname"].value == "Local") { //Local Hack Day
+						    window.open("LocalHackDay.html");
+						}
+				    }
+				}
+			</script>
+			<!-- <p>Where are you from? <i>[Cajita de Text Edit]</i></p>
+			<p>Where do you want to go? <i>[Cajita de seleccion que coge datos de la BD/lista de hacks]</i></p>
+			<p>Do you want an extra margin of time (in hours)? <i>[Cajita de Text Edit]</i></p> --> <!-- CONVENTIONS --> 
+		</div>
+		<div> <!-- TAIL -->
+			<hr>
+			<p>
+				Developed by Aaron Jimenez, Miguel Moreno and Alex Viñas for HackUPC Fall 2016.
+			</p>
+		</div>
+	</body>
+</html>
